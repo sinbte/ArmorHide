@@ -1,0 +1,4 @@
+# Language file to load from the lang/ folder (without the .yml extension).
+# Bundled languages: en
+# To add your own, create lang/<name>.yml and set it here.
+language: en

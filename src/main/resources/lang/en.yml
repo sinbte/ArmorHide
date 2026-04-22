@@ -1,0 +1,15 @@
+# ArmorHide language file (English)
+# Color codes use the section sign (§).
+# Placeholders: %item% (item name).
+
+player-only: "§cThis command can only be used by players."
+
+armor:
+  hide-on: "§aArmor hidden."
+  hide-on-desc: "§7Other players can no longer see your armor."
+  hide-off: "§aArmor visible."
+  hide-off-desc: "§7Other players can see your armor again."
+  hat-set: "§aCosmetic hat set to §f%item%§a."
+  hat-removed: "§aCosmetic hat removed."
+  hat-need-item: "§cHold an item in your main hand to set it as a hat."
+  hat-how-to-remove: "§7Use §f/cosmetichat off §7to remove your hat."
