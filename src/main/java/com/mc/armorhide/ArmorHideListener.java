@@ -93,7 +93,7 @@ public class ArmorHideListener implements Listener, CommandExecutor {
                         refreshEquipmentForAll(player);
                     }
                     if (hiddenArmor.contains(uuid)) {
-                        player.updateInventory();
+                        updateInventoryUnlessCreative(player);
                     }
                 });
             }
@@ -485,7 +485,7 @@ public class ArmorHideListener implements Listener, CommandExecutor {
         }
 
         refreshEquipmentForAll(player);
-        player.updateInventory();
+        updateInventoryUnlessCreative(player);
         return true;
     }
 
@@ -516,6 +516,11 @@ public class ArmorHideListener implements Listener, CommandExecutor {
         Lang.send(player, "armor.hat-how-to-remove");
         refreshEquipmentForAll(player);
         return true;
+    }
+
+    private void updateInventoryUnlessCreative(Player player) {
+        if (player.getGameMode() == GameMode.CREATIVE) return;
+        player.updateInventory();
     }
 
     /**
@@ -598,7 +603,7 @@ public class ArmorHideListener implements Listener, CommandExecutor {
         Sched.entityLater(plugin, player, () -> {
             if (player.isOnline()) {
                 refreshEquipmentForAll(player);
-                player.updateInventory();
+                updateInventoryUnlessCreative(player);
             }
         }, 1L);
     }
@@ -640,7 +645,7 @@ public class ArmorHideListener implements Listener, CommandExecutor {
                 Sched.entity(plugin, player, () -> {
                     refreshEquipmentForAll(player);
                     if (armorHidden) {
-                        player.updateInventory();
+                        updateInventoryUnlessCreative(player);
                     }
                 });
             }
